@@ -113,6 +113,21 @@ struct ListPoint {
     }
 };
 
+struct Line {
+    ListPoint P;
+    string color = "red";
+    //инициализация - конструктор
+    Line(unsigned int n = 10, string c = "green") : color(c) {
+        P = ListPoint(n, "Точки для ломанной линии");
+        P.setPoints();
+    }
+    //вывод информации о ломанной линии
+    void print() {
+        cout << "\n Ломанная линия, цвет: " << color;
+        P.print();
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
