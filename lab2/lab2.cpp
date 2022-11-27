@@ -84,6 +84,34 @@ struct Circle {
     }
 };
 
+struct ListPoint {
+    Point* points = NULL;
+    string name;
+    int N = 10;
+    //инициализация - конструктор
+    ListPoint(unsigned int n = 10, string name = "No name") : N(n), name(name) {
+        this->name = string(name);
+        points = new Point[N];//выделение динамической памяти для массива точек
+    }
+    //заполнение массива
+    void setPoints() {
+        srand(time(NULL));
+        for (int i = 0; i < N; i++) {
+            points[i].x = rand() % 100;
+            points[i].y = rand() % 100;
+        }
+    }
+    //вывод информации о массиве точек
+    void print() {
+        cout << "\n Кол-во точек: " << N;
+        cout << "\n Название массива: " << name;
+        for (int i = 0; i < N; i++) {
+            points[i].print();
+        }
+    }
+    ~ListPoint() {
+    }
+};
 
 int main()
 {
