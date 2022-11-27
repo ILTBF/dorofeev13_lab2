@@ -128,7 +128,24 @@ struct Line {
     }
 };
 
-
+class Point1 {
+public:
+    double x, y;
+public:
+    Point1(double x_ = 0.0, double y_ = 0.0) {
+        x = x_;
+        y = y_;
+    }
+    void print() {
+        cout << "\n точка (" << x << ", " << y << ")";
+    }
+    void setX(double x_) {
+        x = x_;
+    }
+    void setY(double y_) {
+        y = y_;
+    }
+};
 
 int main()
 {
