@@ -128,7 +128,33 @@ struct Line {
     }
 };
 
+
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    //статическая память
+    Line A = Line(9, "blue");
+    A.print();
+    cout << "\n";
+    //динамическая память
+    Line* B = new Line(5, "black");
+    B->print();
+    delete B;
+    //статическая память
+    Circle C = Circle(Point(1.0, 1.0), 9.0);
+    C.print();
+    C.setPointX(2.2);
+    C.setPointY(4.8);
+    C.print();
+    //динамическая память
+    Circle* D = new Circle(Point(2.4, 3.3), 4.5);
+    D->S();
+    D->L();
+    D->print();
+    delete D;
+
+    Triangle tt = Triangle(Point(1.1, 2.2), Point(3.2, 4.2), Point(2.9, 7.2));
+    tt.print();
+    tt.Length();
 }
