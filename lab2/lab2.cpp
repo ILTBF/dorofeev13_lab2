@@ -177,6 +177,33 @@ public:
     }
 };
 
+class Triangle1 {
+private:
+    Point1 abc[3];
+public:
+    Triangle1() {}
+    Triangle1(Point1 A, Point1 B, Point1 C) {
+        abc[0] = A;
+        abc[1] = B;
+        abc[2] = C;
+    }
+    void print() {
+        cout << "\n\n Координаты треугольника: ";
+        for (int i = 0; i < 3; i++) {
+            abc[i].print();
+        }
+    }
+    //Метод для вычисление длин сторон треугольника
+    double Length() {
+        double a, b, c;
+        a = sqrt((abc[0].x - abc[1].x) * (abc[0].x - abc[1].x) + (abc[0].y - abc[1].y) * (abc[0].y - abc[1].y));
+        b = sqrt((abc[0].x - abc[2].x) * (abc[0].x - abc[2].x) + (abc[0].y - abc[2].y) * (abc[0].y - abc[2].y));
+        c = sqrt((abc[1].x - abc[2].x) * (abc[1].x - abc[2].x) + (abc[1].y - abc[2].y) * (abc[1].y - abc[2].y));
+        cout << "\n Длина стороны A: " << a << "\n Длина стороны B: " << b << "\n Длина стороны C: " << c;
+        return 0;
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
