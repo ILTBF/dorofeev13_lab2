@@ -235,6 +235,23 @@ public:
     }
 };
 
+class Line1 {
+private:
+    ListPoint1 P;
+    string color;
+public:
+    Line1() {}
+    Line1(int n, string c) {
+        color = c;
+        P = ListPoint1(n, "Точки для ломанной линии");
+        P.setPoints();
+    }
+    void print() {
+        cout << "\n Ломанная линия, цвет: " << color;
+        P.print();
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
