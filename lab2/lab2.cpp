@@ -147,6 +147,36 @@ public:
     }
 };
 
+class Circle1 {
+private:
+    Point1 O;
+    double R;
+public:
+    Circle1() {}
+    Circle1(Point1 A, double r) {
+        O = A;
+        R = r;
+    }
+    double S() {
+        return 3.14 * R * R;
+    }
+    //Метод для вычисление длины окружности
+    double L() {
+        return 2 * 3.14 * R;
+    }
+    void print() {
+        cout << "\n\n Окружность с радиусом " << R << "\n с центром в";
+        O.print();
+        cout << "\n Площадь: " << S() << "\n Длина окружности: " << L();
+    }
+    void setPointX(double x) {
+        O.setX(x);
+    }
+    void setPointY(double y) {
+        O.setY(y);
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
