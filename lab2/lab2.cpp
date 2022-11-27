@@ -204,6 +204,37 @@ public:
     }
 };
 
+class ListPoint1 {
+private:
+    Point1* points = NULL;
+    string name;
+    int N = 10;
+public:
+    ListPoint1() {}
+    ListPoint1(int n, string name_) {
+        N = n;
+        this->name = string(name_);
+        points = new Point1[N];//выделение динамической памяти для массива точек
+    }
+    void setPoints() {
+        srand(time(NULL));
+        for (int i = 0; i < N; i++) {
+            points[i].x = rand() % 100;
+            points[i].y = rand() % 100;
+        }
+    }
+    //вывод информации о массиве точек
+    void print() {
+        cout << "\n Кол-во точек: " << N;
+        cout << "\n Название массива: " << name;
+        for (int i = 0; i < N; i++) {
+            points[i].print();
+        }
+    }
+    ~ListPoint1() {
+    }
+};
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
