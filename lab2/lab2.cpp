@@ -56,6 +56,35 @@ struct Triangle {
     }
 };
 
+struct Circle {
+    Point O;
+    double R;
+    //инициализация - конструктор
+    Circle(Point A = Point(0, 0), double r = 10.0) : O(A), R(r) {
+    }
+    //Метод для вычисления площади окружности
+    double S() {
+        return 3.14 * R * R;
+    }
+    //Метод для вычисление длины окружности
+    double L() {
+        return 2 * 3.14 * R;
+    }
+    //вывод информации окружности
+    void print() {
+        cout << "\n\n Окружность с радиусом " << R << "\n с центром в";
+        O.print();
+        cout << "\n Площадь: " << S() << "\n Длина окружности: " << L();
+    }
+    void setPointX(double x) {
+        O.setX(x);
+    }
+    void setPointY(double y) {
+        O.setY(y);
+    }
+};
+
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
