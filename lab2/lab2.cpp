@@ -279,4 +279,34 @@ int main()
     Triangle tt = Triangle(Point(1.1, 2.2), Point(3.2, 4.2), Point(2.9, 7.2));
     tt.print();
     tt.Length();
+
+    ////////////////////////////////////////////////////////////////////////////
+
+    Triangle1 t = Triangle1(Point1(1.0, 2.0), Point1(3.2, 4.1), Point1(2.0, 5.0));
+    t.print();
+    t.Length();
+    cout << "\n";
+    Line1 l = Line1(7, "yellow");
+    l.print();
+
+    Circle1 c = Circle1(Point1(2.1, 3.5), 9);
+    c.print();
+
+    Circle1 mas1[2]; //Статический массив со статическими окружностями
+    mas1[0] = c;
+    mas1[0].print();
+    Circle1 c1 = Circle1(Point1(3.5, 5.1), 7);
+    mas1[1] = c1;
+    mas1[1].print();
+
+    Circle1* mas2 = new Circle1[2]; //Динамический массив с динамическими окружностями
+    mas2[0] = c;
+    mas2[0].print();
+    delete[] mas2;
+
+    Circle1 mas3[2]; ////Массив с ссылками на объекты
+    Circle1* c2 = new Circle1(Point1(1.4, 2.5), 11);
+    mas3[0] = *c2;
+    mas3[0].print();
+    delete c2;
 }
